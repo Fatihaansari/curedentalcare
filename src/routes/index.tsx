@@ -88,9 +88,7 @@ function Home() {
       <header className="sticky top-0 z-40 backdrop-blur-lg bg-background/80 border-b border-border">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
           <a href="#home" className="flex items-center gap-2">
-            <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-primary to-accent grid place-items-center text-primary-foreground font-bold shadow-md">
-              C
-            </div>
+            <img src={logo.url} alt="Cure Dental Care logo" className="w-11 h-11 object-contain" />
             <div className="leading-tight">
               <div className="font-bold text-sm sm:text-base">Cure Dental Care</div>
               <div className="text-[10px] sm:text-xs text-muted-foreground">& Medical Centre</div>
