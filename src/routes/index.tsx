@@ -365,7 +365,7 @@ function Home() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 grid md:grid-cols-3 gap-8">
           <div>
             <div className="flex items-center gap-2">
-              <div className="w-10 h-10 rounded-xl bg-primary-foreground/10 grid place-items-center font-bold">C</div>
+              <div className="w-11 h-11 rounded-xl bg-white p-1 grid place-items-center shadow-md"><img src={logo.url} alt="Cure Dental Care logo" className="w-full h-full object-contain" /></div>
               <div>
                 <div className="font-bold">Cure Dental Care</div>
                 <div className="text-xs opacity-80">& Medical Centre</div>
