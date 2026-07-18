@@ -22,6 +22,7 @@ import smile from "@/assets/smile.jpg.asset.json";
 import ortho from "@/assets/ortho.jpg.asset.json";
 import braces from "@/assets/braces.jpg.asset.json";
 import ramadan from "@/assets/ramadan.jpg.asset.json";
+import logo from "@/assets/cure-logo.png.asset.json";
 
 const PHONE = "+923418711752";
 const PHONE_DISPLAY = "+92 341 8711752";
@@ -87,9 +88,7 @@ function Home() {
       <header className="sticky top-0 z-40 backdrop-blur-lg bg-background/80 border-b border-border">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
           <a href="#home" className="flex items-center gap-2">
-            <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-primary to-accent grid place-items-center text-primary-foreground font-bold shadow-md">
-              C
-            </div>
+            <img src={logo.url} alt="Cure Dental Care logo" className="w-11 h-11 object-contain" />
             <div className="leading-tight">
               <div className="font-bold text-sm sm:text-base">Cure Dental Care</div>
               <div className="text-[10px] sm:text-xs text-muted-foreground">& Medical Centre</div>
@@ -366,7 +365,7 @@ function Home() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 grid md:grid-cols-3 gap-8">
           <div>
             <div className="flex items-center gap-2">
-              <div className="w-10 h-10 rounded-xl bg-primary-foreground/10 grid place-items-center font-bold">C</div>
+              <div className="w-11 h-11 rounded-xl bg-white p-1 grid place-items-center shadow-md"><img src={logo.url} alt="Cure Dental Care logo" className="w-full h-full object-contain" /></div>
               <div>
                 <div className="font-bold">Cure Dental Care</div>
                 <div className="text-xs opacity-80">& Medical Centre</div>
