@@ -22,6 +22,7 @@ import smile from "@/assets/smile.jpg.asset.json";
 import ortho from "@/assets/ortho.jpg.asset.json";
 import braces from "@/assets/braces.jpg.asset.json";
 import ramadan from "@/assets/ramadan.jpg.asset.json";
+import logo from "@/assets/cure-logo.png.asset.json";
 
 const PHONE = "+923418711752";
 const PHONE_DISPLAY = "+92 341 8711752";
