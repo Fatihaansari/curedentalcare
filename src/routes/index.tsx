@@ -17,7 +17,7 @@ import {
   Star,
   GraduationCap,
 } from "lucide-react";
-import doctor from "@/assets/doctor.jpg.asset.json";
+import doctor from "@/assets/doctor-treatment.jpg.asset.json";
 import smile from "@/assets/smile.jpg.asset.json";
 import ortho from "@/assets/ortho.jpg.asset.json";
 import braces from "@/assets/braces.jpg.asset.json";
