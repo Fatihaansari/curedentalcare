@@ -4,7 +4,7 @@ import {
   Phone,
   MapPin,
   Clock,
-  Instagram,
+  Facebook,
   MessageCircle,
   Menu,
   X,
@@ -16,6 +16,7 @@ import {
   ShieldCheck,
   Star,
   GraduationCap,
+  Quote,
 } from "lucide-react";
 import doctor from "@/assets/doctor-treatment.jpg.asset.json";
 import smile from "@/assets/smile.jpg.asset.json";
@@ -23,21 +24,20 @@ import ortho from "@/assets/ortho.jpg.asset.json";
 import braces from "@/assets/braces.jpg.asset.json";
 import ramadan from "@/assets/ramadan.jpg.asset.json";
 import logo from "@/assets/cure-logo.png.asset.json";
+import rctCase from "@/assets/rct-case.jpeg.asset.json";
+import smileCase from "@/assets/smile-case.jpeg.asset.json";
+import cleaningCase from "@/assets/cleaning-case.jpeg.asset.json";
 
 const PHONE = "+923418711752";
 const PHONE_DISPLAY = "+92 341 8711752";
-const WA_NUMBER = "923418711752";
+const WA_DISPLAY = "+92 341 8711752";
+const FB_LINK = "https://www.facebook.com/share/14qB9F6qjUJ/?mibextid=wwXIfr";
 const ADDRESS =
   "KS-2143 Imam Colony L Block, 11 Sector, Block 1 Orangi Town, Karachi, 75800, Pakistan";
 const HOURS = "Open Daily · Closes 10:00 PM (Ramadan: 8:00 PM – 10:30 PM)";
 const MAP_EMBED =
   "https://www.google.com/maps?q=24.9505934,66.9822971&z=17&output=embed";
 const MAP_LINK = "https://www.google.com/maps?q=24.9505934,66.9822971";
-
-const waMessage = encodeURIComponent(
-  `Hello! 👋\n\nI'm interested in your dental services.\n\nClinic: Cure Dental Care & Medical Centre\nAddress: ${ADDRESS}\nPhone: ${PHONE_DISPLAY}\nHours: ${HOURS}\n\nPlease share appointment details. Thank you!`,
-);
-const WA_LINK = `https://wa.me/${WA_NUMBER}?text=${waMessage}`;
 
 const services = [
   { icon: Sparkles, name: "Cosmetic Whitening", desc: "Professional teeth whitening for a brighter, confident smile." },
@@ -48,10 +48,35 @@ const services = [
   { icon: ShieldCheck, name: "Root Canal (Endodontics)", desc: "Painless root canal treatments performed with certified expertise." },
 ];
 
+const patientCases = [
+  {
+    img: smileCase.url,
+    title: "Smile Restoration",
+    treatment: "Composite Restoration",
+    quote: "Dr. Rimsha fixed my broken front tooth so beautifully — it looks completely natural. Highly recommended!",
+    name: "Ahmed R.",
+  },
+  {
+    img: cleaningCase.url,
+    title: "Scaling & Deep Cleaning",
+    treatment: "Full Mouth Cleaning",
+    quote: "Years of stains gone in one visit. Painless, professional and truly caring staff.",
+    name: "Fatima S.",
+  },
+  {
+    img: rctCase.url,
+    title: "Root Canal Treatment",
+    treatment: "Endodontic Therapy",
+    quote: "No pain during the entire root canal. Saved my tooth from extraction — thank you Cure Dental!",
+    name: "Bilal M.",
+  },
+];
+
 const nav = [
   { href: "#home", label: "Home" },
   { href: "#about", label: "About" },
   { href: "#services", label: "Services" },
+  { href: "#reviews", label: "Reviews" },
   { href: "#gallery", label: "Gallery" },
   { href: "#contact", label: "Contact" },
 ];
@@ -68,8 +93,7 @@ export const Route = createFileRoute("/")({
       { property: "og:title", content: "Cure Dental Care & Medical Centre" },
       {
         property: "og:description",
-        content:
-          "Smile with confidence — trusted dental care tailored for you. Book on WhatsApp: +92 341 8711752.",
+        content: "Smile with confidence — trusted dental care tailored for you. Call: +92 341 8711752.",
       },
       { property: "og:type", content: "website" },
       { property: "og:image", content: smile.url.startsWith("http") ? smile.url : `https://cure-dental.lovable.app${smile.url}` },
@@ -94,7 +118,7 @@ function Home() {
               <div className="text-[10px] sm:text-xs text-muted-foreground">& Medical Centre</div>
             </div>
           </a>
-          <nav className="hidden md:flex items-center gap-8">
+          <nav className="hidden md:flex items-center gap-7">
             {nav.map((n) => (
               <a key={n.href} href={n.href} className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">
                 {n.label}
@@ -102,12 +126,10 @@ function Home() {
             ))}
           </nav>
           <a
-            href={WA_LINK}
-            target="_blank"
-            rel="noopener noreferrer"
+            href={`tel:${PHONE}`}
             className="hidden md:inline-flex items-center gap-2 rounded-full bg-primary text-primary-foreground px-4 py-2 text-sm font-semibold shadow-md hover:shadow-lg hover:-translate-y-0.5 transition-all"
           >
-            <MessageCircle className="w-4 h-4" /> Book Appointment
+            <Phone className="w-4 h-4" /> Call Now
           </a>
           <button className="md:hidden p-2" onClick={() => setOpen(!open)} aria-label="Menu">
             {open ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -142,19 +164,24 @@ function Home() {
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <a
-                href={WA_LINK}
-                target="_blank"
-                rel="noopener noreferrer"
+                href={`tel:${PHONE}`}
                 className="inline-flex items-center gap-2 rounded-full bg-primary text-primary-foreground px-6 py-3 font-semibold shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all"
               >
-                <MessageCircle className="w-5 h-5" /> WhatsApp Appointment
+                <Phone className="w-5 h-5" /> Call {PHONE_DISPLAY}
               </a>
               <a
-                href={`tel:${PHONE}`}
+                href={FB_LINK}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-6 py-3 font-semibold hover:bg-accent transition-colors"
               >
-                <Phone className="w-5 h-5" /> {PHONE_DISPLAY}
+                <Facebook className="w-5 h-5" /> Follow on Facebook
               </a>
+            </div>
+            <div className="mt-6 inline-flex items-center gap-2 rounded-xl border border-border bg-card/60 px-4 py-2.5 text-sm">
+              <MessageCircle className="w-4 h-4 text-[#25D366]" />
+              <span className="text-muted-foreground">WhatsApp:</span>
+              <span className="font-semibold">{WA_DISPLAY}</span>
             </div>
             <div className="mt-8 flex items-center gap-6 text-sm text-muted-foreground">
               <div className="flex items-center gap-1">
@@ -250,19 +277,73 @@ function Home() {
               <p className="mt-2 opacity-90">Get your braces done by a professional orthodontist. Monthly installment plans available.</p>
             </div>
             <a
-              href={WA_LINK}
-              target="_blank"
-              rel="noopener noreferrer"
+              href={`tel:${PHONE}`}
               className="inline-flex items-center gap-2 rounded-full bg-background text-primary px-6 py-3 font-semibold shadow-lg hover:shadow-xl transition-all whitespace-nowrap"
             >
-              <MessageCircle className="w-5 h-5" /> Claim Offer
+              <Phone className="w-5 h-5" /> Call to Claim
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* Patient Reviews / Cases */}
+      <section id="reviews" className="py-20 bg-secondary/40">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-2xl mx-auto">
+            <div className="text-sm font-semibold text-primary uppercase tracking-wider mb-3">Patient Results & Reviews</div>
+            <h2 className="text-3xl sm:text-4xl font-bold">Real cases. Real smiles.</h2>
+            <p className="mt-4 text-muted-foreground">
+              A closer look at our clinical work and what our patients say after treatment.
+            </p>
+          </div>
+          <div className="mt-12 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {patientCases.map((c) => (
+              <article
+                key={c.title}
+                className="group flex flex-col rounded-3xl bg-card border border-border overflow-hidden shadow-sm hover:shadow-2xl hover:-translate-y-1 transition-all"
+              >
+                <div className="relative aspect-[4/3] overflow-hidden">
+                  <img
+                    src={c.img}
+                    alt={c.title}
+                    loading="lazy"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute top-3 left-3 rounded-full bg-background/90 backdrop-blur px-3 py-1 text-xs font-semibold text-primary">
+                    {c.treatment}
+                  </div>
+                </div>
+                <div className="p-6 flex-1 flex flex-col">
+                  <div className="flex items-center gap-1 mb-3">
+                    {[...Array(5)].map((_, i) => (
+                      <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />
+                    ))}
+                  </div>
+                  <h3 className="font-bold text-lg">{c.title}</h3>
+                  <div className="relative mt-3 flex-1">
+                    <Quote className="absolute -top-1 -left-1 w-6 h-6 text-primary/20" />
+                    <p className="pl-6 text-sm text-muted-foreground italic leading-relaxed">"{c.quote}"</p>
+                  </div>
+                  <div className="mt-4 pt-4 border-t border-border text-sm font-semibold">— {c.name}</div>
+                </div>
+              </article>
+            ))}
+          </div>
+          <div className="mt-10 text-center">
+            <a
+              href={FB_LINK}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-full bg-[#1877F2] text-white px-6 py-3 font-semibold shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all"
+            >
+              <Facebook className="w-5 h-5" /> See more on Facebook
             </a>
           </div>
         </div>
       </section>
 
       {/* Gallery */}
-      <section id="gallery" className="py-20 bg-secondary/40">
+      <section id="gallery" className="py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto">
             <div className="text-sm font-semibold text-primary uppercase tracking-wider mb-3">Gallery</div>
@@ -293,7 +374,7 @@ function Home() {
       </section>
 
       {/* Contact + Map */}
-      <section id="contact" className="py-20">
+      <section id="contact" className="py-20 bg-secondary/40">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto">
             <div className="text-sm font-semibold text-primary uppercase tracking-wider mb-3">Visit Us</div>
@@ -304,8 +385,9 @@ function Home() {
               {[
                 { icon: MapPin, title: "Address", body: ADDRESS, link: MAP_LINK, linkLabel: "Open in Maps" },
                 { icon: Phone, title: "Phone", body: PHONE_DISPLAY, link: `tel:${PHONE}`, linkLabel: "Call now" },
+                { icon: MessageCircle, title: "WhatsApp", body: `${WA_DISPLAY} — save & message us directly` },
                 { icon: Clock, title: "Hours", body: HOURS },
-                { icon: MessageCircle, title: "WhatsApp", body: "Fast replies · appointment booking", link: WA_LINK, linkLabel: "Message on WhatsApp" },
+                { icon: Facebook, title: "Facebook", body: "CURE Dental Care & Medical Centre", link: FB_LINK, linkLabel: "Visit our page" },
               ].map((c) => (
                 <div key={c.title} className="flex gap-4 p-5 rounded-2xl bg-card border border-border shadow-sm">
                   <div className="w-11 h-11 shrink-0 rounded-xl bg-primary/10 text-primary grid place-items-center">
@@ -313,7 +395,7 @@ function Home() {
                   </div>
                   <div className="min-w-0">
                     <div className="font-semibold">{c.title}</div>
-                    <div className="text-sm text-muted-foreground mt-0.5">{c.body}</div>
+                    <div className="text-sm text-muted-foreground mt-0.5 break-words">{c.body}</div>
                     {c.link && (
                       <a
                         href={c.link}
@@ -329,20 +411,18 @@ function Home() {
               ))}
               <div className="flex gap-3">
                 <a
-                  href={WA_LINK}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href={`tel:${PHONE}`}
                   className="flex-1 inline-flex items-center justify-center gap-2 rounded-full bg-primary text-primary-foreground px-6 py-3 font-semibold shadow-md hover:shadow-lg transition-all"
                 >
-                  <MessageCircle className="w-5 h-5" /> WhatsApp
+                  <Phone className="w-5 h-5" /> Call Now
                 </a>
                 <a
-                  href="https://www.facebook.com/people/CURE-Dental-Care-and-medical-centre/"
+                  href={FB_LINK}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 rounded-full border border-border bg-card px-6 py-3 font-semibold hover:bg-accent transition-colors"
+                  className="inline-flex items-center justify-center gap-2 rounded-full bg-[#1877F2] text-white px-6 py-3 font-semibold hover:opacity-90 transition-all"
                 >
-                  <Instagram className="w-5 h-5" /> Follow
+                  <Facebook className="w-5 h-5" /> Follow
                 </a>
               </div>
             </div>
@@ -374,6 +454,14 @@ function Home() {
             <p className="mt-4 text-sm opacity-80 leading-relaxed">
               Trusted dental care tailored for you. Smile with confidence.
             </p>
+            <a
+              href={FB_LINK}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-4 inline-flex items-center gap-2 rounded-full bg-white/10 hover:bg-white/20 px-4 py-2 text-sm font-semibold transition-colors"
+            >
+              <Facebook className="w-4 h-4" /> Facebook Page
+            </a>
           </div>
           <div>
             <div className="font-semibold mb-3">Quick Links</div>
@@ -388,9 +476,10 @@ function Home() {
           <div>
             <div className="font-semibold mb-3">Contact</div>
             <ul className="space-y-2 text-sm opacity-80">
-              <li>{PHONE_DISPLAY}</li>
-              <li className="leading-relaxed">{ADDRESS}</li>
-              <li>{HOURS}</li>
+              <li>📞 {PHONE_DISPLAY}</li>
+              <li>💬 WhatsApp: {WA_DISPLAY}</li>
+              <li className="leading-relaxed">📍 {ADDRESS}</li>
+              <li>🕒 {HOURS}</li>
             </ul>
           </div>
         </div>
@@ -401,16 +490,17 @@ function Home() {
         </div>
       </footer>
 
-      {/* Floating WhatsApp */}
+      {/* Floating Call button */}
       <a
-        href={WA_LINK}
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="WhatsApp"
-        className="fixed bottom-5 right-5 z-50 w-14 h-14 rounded-full bg-[#25D366] text-white grid place-items-center shadow-2xl hover:scale-110 transition-transform"
+        href={`tel:${PHONE}`}
+        aria-label="Call clinic"
+        className="fixed bottom-5 right-5 z-50 inline-flex items-center gap-2 rounded-full bg-primary text-primary-foreground pl-4 pr-5 py-3 shadow-2xl hover:scale-105 transition-transform"
       >
-        <MessageCircle className="w-7 h-7" />
-        <span className="absolute inset-0 rounded-full bg-[#25D366] animate-ping opacity-30" />
+        <span className="relative grid place-items-center w-8 h-8 rounded-full bg-white/20">
+          <Phone className="w-4 h-4" />
+          <span className="absolute inset-0 rounded-full bg-white/30 animate-ping" />
+        </span>
+        <span className="font-semibold text-sm">Call Now</span>
       </a>
     </div>
   );
