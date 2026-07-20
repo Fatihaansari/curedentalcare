@@ -17,12 +17,14 @@ import {
   Star,
   GraduationCap,
   Quote,
+  Award,
+  BadgeCheck,
 } from "lucide-react";
 import doctor from "@/assets/doctor-treatment.jpg.asset.json";
 import smile from "@/assets/smile.jpg.asset.json";
 import ortho from "@/assets/ortho.jpg.asset.json";
 import braces from "@/assets/braces.jpg.asset.json";
-import ramadan from "@/assets/ramadan.jpg.asset.json";
+import drRimshaCert from "@/assets/dr-rimsha-ortho-cert.jpg.asset.json";
 import logo from "@/assets/cure-logo.png.asset.json";
 import rctCase from "@/assets/rct-case.jpeg.asset.json";
 import smileCase from "@/assets/smile-case.jpeg.asset.json";
@@ -34,7 +36,7 @@ const WA_DISPLAY = "+92 341 8711752";
 const FB_LINK = "https://www.facebook.com/share/14qB9F6qjUJ/?mibextid=wwXIfr";
 const ADDRESS =
   "KS-2143 Imam Colony L Block, 11 Sector, Block 1 Orangi Town, Karachi, 75800, Pakistan";
-const HOURS = "Open Daily · Closes 10:00 PM (Ramadan: 8:00 PM – 10:30 PM)";
+const HOURS = "Open Daily · 6:00 PM – 10:00 PM";
 const MAP_EMBED =
   "https://www.google.com/maps?q=24.9505934,66.9822971&z=17&output=embed";
 const MAP_LINK = "https://www.google.com/maps?q=24.9505934,66.9822971";
@@ -72,9 +74,21 @@ const patientCases = [
   },
 ];
 
+const achievements = [
+  {
+    name: "Dr. Rimsha Nehal",
+    image: doctor.url,
+    certImage: drRimshaCert.url,
+    title: "Comprehensive Certification in Orthodontics",
+    institute: "IIOCO — International Institute of Orthodontic & Cosmetic Odontology",
+    date: "2024",
+  },
+];
+
 const nav = [
   { href: "#home", label: "Home" },
   { href: "#about", label: "About" },
+  { href: "#achievements", label: "Achievements" },
   { href: "#services", label: "Services" },
   { href: "#reviews", label: "Reviews" },
   { href: "#gallery", label: "Gallery" },
