@@ -29,6 +29,7 @@ import logo from "@/assets/cure-logo.png.asset.json";
 import rctCase from "@/assets/rct-case.jpeg.asset.json";
 import smileCase from "@/assets/smile-case.jpeg.asset.json";
 import cleaningCase from "@/assets/cleaning-case.jpeg.asset.json";
+import orthoTransformation from "@/assets/ortho-transformation.jpeg.asset.json";
 
 const PHONE = "+923418711752";
 const PHONE_DISPLAY = "+92 341 8711752";
@@ -85,10 +86,31 @@ const achievements = [
   },
 ];
 
+type Transformation = {
+  title: string;
+  caption: string;
+  treatment: string;
+  duration?: string;
+  // Provide either a pre-combined vertical/horizontal strip OR three individual step images
+  stripImage?: string;
+  steps?: { label: string; img: string }[];
+};
+
+const transformations: Transformation[] = [
+  {
+    title: "Complete Orthodontic Transformation",
+    caption: "Complete Orthodontic Transformation with Braces",
+    treatment: "Fixed Metal Braces",
+    duration: "18 months",
+    stripImage: orthoTransformation.url,
+  },
+];
+
 const nav = [
   { href: "#home", label: "Home" },
   { href: "#about", label: "About" },
   { href: "#achievements", label: "Achievements" },
+  { href: "#transformations", label: "Before & After" },
   { href: "#services", label: "Services" },
   { href: "#reviews", label: "Reviews" },
   { href: "#gallery", label: "Gallery" },
@@ -311,7 +333,110 @@ function Home() {
         </div>
       </section>
 
+      {/* Patient Transformations — Before & After */}
+      <section id="transformations" className="py-20 bg-gradient-to-b from-secondary/30 via-background to-background">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-2xl mx-auto">
+            <div className="inline-flex items-center gap-2 text-sm font-semibold text-primary uppercase tracking-wider mb-3">
+              <Sparkles className="w-4 h-4" /> Before &amp; After
+            </div>
+            <h2 className="text-3xl sm:text-4xl font-bold">Real Smiles, Real Results</h2>
+            <p className="mt-4 text-muted-foreground">
+              Life-changing orthodontic transformations by Dr. Rimsha Nehal — from crooked to confident.
+            </p>
+          </div>
+
+          <div className="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-2 items-stretch">
+            {transformations.map((t) => {
+              const steps =
+                t.steps ??
+                [
+                  { label: "Before", img: t.stripImage! },
+                  { label: "During Treatment", img: t.stripImage! },
+                  { label: "After", img: t.stripImage! },
+                ];
+              const isStrip = !t.steps && !!t.stripImage;
+              return (
+                <article
+                  key={t.title}
+                  className="group rounded-3xl bg-card border border-border shadow-xl hover:shadow-2xl hover:-translate-y-1 transition-all overflow-hidden flex flex-col"
+                >
+                  <div className="p-4 sm:p-6 bg-gradient-to-br from-primary/10 via-accent/5 to-secondary/40">
+                    {isStrip ? (
+                      <div className="relative rounded-2xl overflow-hidden bg-background shadow-md">
+                        <img
+                          src={t.stripImage}
+                          alt={t.caption}
+                          loading="lazy"
+                          className="w-full h-auto object-contain max-h-[560px] mx-auto"
+                        />
+                      </div>
+                    ) : (
+                      <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                        {steps.map((s) => (
+                          <div key={s.label} className="relative rounded-2xl overflow-hidden bg-background shadow-md">
+                            <img
+                              src={s.img}
+                              alt={s.label}
+                              loading="lazy"
+                              className="w-full h-48 sm:h-56 object-cover"
+                            />
+                            <div className="absolute top-2 left-2 rounded-full bg-primary text-primary-foreground text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 shadow">
+                              {s.label}
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    )}
+
+                    <div className="mt-4 grid grid-cols-3 gap-2 text-center">
+                      {["Before", "During", "After"].map((label, i) => (
+                        <div key={label} className="flex items-center justify-center gap-1.5 text-xs sm:text-sm">
+                          <span className="w-6 h-6 rounded-full bg-primary text-primary-foreground grid place-items-center text-[10px] font-bold shadow">
+                            {i + 1}
+                          </span>
+                          <span className="font-semibold text-foreground">{label}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div className="p-6 flex-1 flex flex-col">
+                    <h3 className="font-bold text-lg text-foreground">{t.title}</h3>
+                    <p className="mt-1 text-sm text-muted-foreground">{t.caption}</p>
+                    <div className="mt-4 flex flex-wrap gap-2">
+                      <span className="inline-flex items-center gap-1.5 rounded-full bg-primary/10 text-primary px-3 py-1 text-xs font-semibold">
+                        <Braces className="w-3.5 h-3.5" /> {t.treatment}
+                      </span>
+                      {t.duration && (
+                        <span className="inline-flex items-center gap-1.5 rounded-full bg-accent/15 text-accent-foreground px-3 py-1 text-xs font-semibold">
+                          <Clock className="w-3.5 h-3.5" /> {t.duration}
+                        </span>
+                      )}
+                    </div>
+                  </div>
+                </article>
+              );
+            })}
+          </div>
+
+          <p className="mt-8 text-center text-xs text-muted-foreground italic">
+            * Results may vary from patient to patient.
+          </p>
+
+          <div className="mt-8 text-center">
+            <a
+              href={`tel:${PHONE}`}
+              className="inline-flex items-center gap-2 rounded-full bg-primary text-primary-foreground px-6 py-3 font-semibold shadow-lg hover:shadow-xl transition-all"
+            >
+              <Phone className="w-5 h-5" /> Book Your Consultation
+            </a>
+          </div>
+        </div>
+      </section>
+
       {/* Services */}
+
       <section id="services" className="py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto">
