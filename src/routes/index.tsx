@@ -17,12 +17,14 @@ import {
   Star,
   GraduationCap,
   Quote,
+  Award,
+  BadgeCheck,
 } from "lucide-react";
 import doctor from "@/assets/doctor-treatment.jpg.asset.json";
 import smile from "@/assets/smile.jpg.asset.json";
 import ortho from "@/assets/ortho.jpg.asset.json";
 import braces from "@/assets/braces.jpg.asset.json";
-import ramadan from "@/assets/ramadan.jpg.asset.json";
+import drRimshaCert from "@/assets/dr-rimsha-ortho-cert.jpg.asset.json";
 import logo from "@/assets/cure-logo.png.asset.json";
 import rctCase from "@/assets/rct-case.jpeg.asset.json";
 import smileCase from "@/assets/smile-case.jpeg.asset.json";
@@ -34,7 +36,7 @@ const WA_DISPLAY = "+92 341 8711752";
 const FB_LINK = "https://www.facebook.com/share/14qB9F6qjUJ/?mibextid=wwXIfr";
 const ADDRESS =
   "KS-2143 Imam Colony L Block, 11 Sector, Block 1 Orangi Town, Karachi, 75800, Pakistan";
-const HOURS = "Open Daily · Closes 10:00 PM (Ramadan: 8:00 PM – 10:30 PM)";
+const HOURS = "Open Daily · 6:00 PM – 10:00 PM";
 const MAP_EMBED =
   "https://www.google.com/maps?q=24.9505934,66.9822971&z=17&output=embed";
 const MAP_LINK = "https://www.google.com/maps?q=24.9505934,66.9822971";
@@ -72,9 +74,21 @@ const patientCases = [
   },
 ];
 
+const achievements = [
+  {
+    name: "Dr. Rimsha Nehal",
+    image: doctor.url,
+    certImage: drRimshaCert.url,
+    title: "Comprehensive Certification in Orthodontics",
+    institute: "IIOCO — International Institute of Orthodontic & Cosmetic Odontology",
+    date: "2024",
+  },
+];
+
 const nav = [
   { href: "#home", label: "Home" },
   { href: "#about", label: "About" },
+  { href: "#achievements", label: "Achievements" },
   { href: "#services", label: "Services" },
   { href: "#reviews", label: "Reviews" },
   { href: "#gallery", label: "Gallery" },
@@ -246,6 +260,60 @@ function Home() {
         </div>
       </section>
 
+      {/* Achievements & Certifications */}
+      <section id="achievements" className="py-20">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-2xl mx-auto">
+            <div className="inline-flex items-center gap-2 text-sm font-semibold text-primary uppercase tracking-wider mb-3">
+              <Award className="w-4 h-4" /> Certifications & Recognitions
+            </div>
+            <h2 className="text-3xl sm:text-4xl font-bold">Our Doctor's Achievements</h2>
+            <p className="mt-4 text-muted-foreground">
+              Continued learning and certified expertise — because your smile deserves the best.
+            </p>
+          </div>
+          <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {achievements.map((a) => (
+              <article
+                key={a.name + a.title}
+                className="group relative flex flex-col rounded-3xl bg-card border border-border overflow-hidden shadow-sm hover:shadow-2xl hover:-translate-y-1 transition-all"
+              >
+                <div className="absolute top-4 right-4 z-10 inline-flex items-center gap-1.5 rounded-full bg-primary text-primary-foreground px-3 py-1 text-xs font-bold shadow-lg ring-2 ring-background">
+                  <BadgeCheck className="w-3.5 h-3.5" /> Certified
+                </div>
+                <div className="relative aspect-[4/3] overflow-hidden bg-secondary/40">
+                  <img
+                    src={a.certImage}
+                    alt={`${a.name} — ${a.title}`}
+                    loading="lazy"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                </div>
+                <div className="p-6 flex-1 flex flex-col">
+                  <div className="flex items-center gap-3">
+                    <img
+                      src={a.image}
+                      alt={a.name}
+                      loading="lazy"
+                      className="w-14 h-14 rounded-full object-cover ring-2 ring-primary/30 shrink-0"
+                    />
+                    <div className="min-w-0">
+                      <div className="font-bold truncate">{a.name}</div>
+                      <div className="text-xs text-muted-foreground">{a.date}</div>
+                    </div>
+                  </div>
+                  <h3 className="mt-4 font-semibold text-primary leading-snug">{a.title}</h3>
+                  <div className="mt-3 flex items-start gap-2 text-sm text-muted-foreground">
+                    <GraduationCap className="w-4 h-4 mt-0.5 shrink-0 text-primary/70" />
+                    <span className="leading-relaxed">{a.institute}</span>
+                  </div>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Services */}
       <section id="services" className="py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -355,7 +423,6 @@ function Home() {
               { src: ortho.url, span: "", alt: "Orthodontic treatment" },
               { src: braces.url, span: "", alt: "Braces information" },
               { src: doctor.url, span: "", alt: "Dr. Rimsha Nehal" },
-              { src: ramadan.url, span: "", alt: "Ramadan timings" },
             ].map((img, i) => (
               <div
                 key={i}
