@@ -29,6 +29,7 @@ import logo from "@/assets/cure-logo.png.asset.json";
 import rctCase from "@/assets/rct-case.jpeg.asset.json";
 import smileCase from "@/assets/smile-case.jpeg.asset.json";
 import cleaningCase from "@/assets/cleaning-case.jpeg.asset.json";
+import orthoTransformation from "@/assets/ortho-transformation.jpeg.asset.json";
 
 const PHONE = "+923418711752";
 const PHONE_DISPLAY = "+92 341 8711752";
@@ -85,10 +86,31 @@ const achievements = [
   },
 ];
 
+type Transformation = {
+  title: string;
+  caption: string;
+  treatment: string;
+  duration?: string;
+  // Provide either a pre-combined vertical/horizontal strip OR three individual step images
+  stripImage?: string;
+  steps?: { label: string; img: string }[];
+};
+
+const transformations: Transformation[] = [
+  {
+    title: "Complete Orthodontic Transformation",
+    caption: "Complete Orthodontic Transformation with Braces",
+    treatment: "Fixed Metal Braces",
+    duration: "18 months",
+    stripImage: orthoTransformation.url,
+  },
+];
+
 const nav = [
   { href: "#home", label: "Home" },
   { href: "#about", label: "About" },
   { href: "#achievements", label: "Achievements" },
+  { href: "#transformations", label: "Before & After" },
   { href: "#services", label: "Services" },
   { href: "#reviews", label: "Reviews" },
   { href: "#gallery", label: "Gallery" },
