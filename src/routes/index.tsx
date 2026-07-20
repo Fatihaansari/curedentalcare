@@ -272,45 +272,42 @@ function Home() {
               Continued learning and certified expertise — because your smile deserves the best.
             </p>
           </div>
-          <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="mt-12 flex flex-wrap justify-center gap-8">
             {achievements.map((a) => (
               <article
                 key={a.name + a.title}
-                className="group relative flex flex-col rounded-3xl bg-card border border-border overflow-hidden shadow-sm hover:shadow-2xl hover:-translate-y-1 transition-all"
+                className="group relative flex flex-col rounded-3xl bg-card border border-border overflow-hidden shadow-xl hover:shadow-2xl hover:-translate-y-1 transition-all w-full max-w-md mx-auto"
               >
                 <div className="absolute top-4 right-4 z-10 inline-flex items-center gap-1.5 rounded-full bg-primary text-primary-foreground px-3 py-1 text-xs font-bold shadow-lg ring-2 ring-background">
                   <BadgeCheck className="w-3.5 h-3.5" /> Certified
                 </div>
-                <div className="relative aspect-[4/3] overflow-hidden bg-secondary/40">
+                <div className="relative bg-gradient-to-br from-primary/10 via-accent/5 to-secondary/40 flex items-center justify-center p-4">
                   <img
                     src={a.certImage}
                     alt={`${a.name} — ${a.title}`}
                     loading="lazy"
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    className="w-full h-auto max-h-[420px] object-contain rounded-xl shadow-md group-hover:scale-[1.02] transition-transform duration-500"
                   />
                 </div>
-                <div className="p-6 flex-1 flex flex-col">
-                  <div className="flex items-center gap-3">
-                    <img
-                      src={a.image}
-                      alt={a.name}
-                      loading="lazy"
-                      className="w-14 h-14 rounded-full object-cover ring-2 ring-primary/30 shrink-0"
-                    />
-                    <div className="min-w-0">
-                      <div className="font-bold truncate">{a.name}</div>
-                      <div className="text-xs text-muted-foreground">{a.date}</div>
-                    </div>
-                  </div>
-                  <h3 className="mt-4 font-semibold text-primary leading-snug">{a.title}</h3>
-                  <div className="mt-3 flex items-start gap-2 text-sm text-muted-foreground">
-                    <GraduationCap className="w-4 h-4 mt-0.5 shrink-0 text-primary/70" />
+                <div className="p-6 flex flex-col items-center text-center">
+                  <img
+                    src={a.image}
+                    alt={a.name}
+                    loading="lazy"
+                    className="w-20 h-20 rounded-full object-cover ring-4 ring-primary/30 shadow-md -mt-14 bg-card"
+                  />
+                  <div className="mt-3 font-bold text-lg">{a.name}</div>
+                  <div className="text-xs text-muted-foreground">Certified {a.date}</div>
+                  <h3 className="mt-3 font-semibold text-primary leading-snug">{a.title}</h3>
+                  <div className="mt-2 flex items-center justify-center gap-2 text-sm text-muted-foreground">
+                    <GraduationCap className="w-4 h-4 shrink-0 text-primary/70" />
                     <span className="leading-relaxed">{a.institute}</span>
                   </div>
                 </div>
               </article>
             ))}
           </div>
+
         </div>
       </section>
 
