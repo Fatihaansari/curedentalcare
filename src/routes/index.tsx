@@ -126,10 +126,10 @@ export const Route = createFileRoute("/")({
         content:
           "Trusted dental clinic in Orangi Town, Karachi. Braces, whitening, implants, root canal and orthodontics by Dr. Rimsha Nehal (BDS, KMDC).",
       },
-      { property: "og:title", content: "Cure Dental Care & Medical Centre" },
+      { property: "og:title", content: "Cure Dental Care & Medical Centre — Dr. Rimsha Nehal, Karachi" },
       {
         property: "og:description",
-        content: "Smile with confidence — trusted dental care tailored for you. Call: +92 341 8711752.",
+        content: "Trusted dental clinic in Orangi Town, Karachi. Braces, whitening, implants, root canal and orthodontics by Dr. Rimsha Nehal (BDS, KMDC).",
       },
       { property: "og:type", content: "website" },
       { property: "og:image", content: smile.url.startsWith("http") ? smile.url : `https://cure-dental.lovable.app${smile.url}` },

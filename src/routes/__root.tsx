@@ -77,14 +77,18 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
+      { title: "Cure Dental Care & Medical Centre — Dr. Rimsha Nehal, Karachi" },
+      { name: "description", content: "Trusted dental clinic in Orangi Town, Karachi. Braces, whitening, implants, root canal and orthodontics by Dr. Rimsha Nehal (BDS, KMDC)." },
       { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { property: "og:title", content: "Cure Dental Care & Medical Centre — Dr. Rimsha Nehal, Karachi" },
+      { property: "og:description", content: "Trusted dental clinic in Orangi Town, Karachi. Braces, whitening, implants, root canal and orthodontics by Dr. Rimsha Nehal (BDS, KMDC)." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:title", content: "Cure Dental Care & Medical Centre — Dr. Rimsha Nehal, Karachi" },
+      { name: "twitter:description", content: "Trusted dental clinic in Orangi Town, Karachi. Braces, whitening, implants, root canal and orthodontics by Dr. Rimsha Nehal (BDS, KMDC)." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/08b55d8f-8310-4969-8295-c4aed7f8fdd4/id-preview-2815f35d--d1a70d04-3ff1-4ac9-8a5d-091fc50a1745.lovable.app-1784563077315.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/08b55d8f-8310-4969-8295-c4aed7f8fdd4/id-preview-2815f35d--d1a70d04-3ff1-4ac9-8a5d-091fc50a1745.lovable.app-1784563077315.png" },
     ],
     links: [
       {
