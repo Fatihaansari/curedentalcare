@@ -81,7 +81,7 @@ const achievements = [
     image: doctor.url,
     certImage: drRimshaCert.url,
     title: "Comprehensive Certification in Orthodontics",
-    institute: "IIOCO — International Institute of Orthodontic & Cosmetic Odontology",
+    institute: "IIOCO —(Irfan's institute of clinical orthodontics",
     date: "2024",
   },
 ];
