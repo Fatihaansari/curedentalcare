@@ -673,10 +673,11 @@ function Home() {
           </div>
           <div className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-4">
             {[
-              { src: smile.url, span: "col-span-2 row-span-2", alt: "Smile transformation" },
-              { src: ortho.url, span: "", alt: "Orthodontic treatment" },
-              { src: braces.url, span: "", alt: "Braces information" },
-              { src: doctor.url, span: "", alt: "Dr. Rimsha Nehal" },
+              { src: smileCase.url, span: "col-span-2 row-span-2", alt: "Smile restoration before and after" },
+              { src: heroClinic.url, span: "", alt: "Modern dental treatment room" },
+              { src: cleaningCase.url, span: "", alt: "Scaling and polishing result" },
+              { src: doctor.url, span: "", alt: "Dr. Rimsha Nehal treating a patient" },
+
             ].map((img, i) => (
               <div
                 key={i}
