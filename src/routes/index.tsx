@@ -277,8 +277,8 @@ function Home() {
           <div className="relative">
             <div className="absolute -inset-4 bg-gradient-to-tr from-primary/20 to-accent/20 rounded-3xl blur-2xl" />
             <img
-              src={smile.url}
-              alt="Cure Dental Care - Smile with confidence"
+              src={heroClinic.url}
+              alt="Modern dental treatment room at Cure Dental Care"
               loading="eager"
               className="relative rounded-3xl shadow-2xl w-full object-cover aspect-[4/5] ring-1 ring-border"
             />
