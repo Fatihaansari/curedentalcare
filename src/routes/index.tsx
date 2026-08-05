@@ -175,6 +175,10 @@ export const Route = createFileRoute("/")({
 
 function Home() {
   const [open, setOpen] = useState(false);
+  const [showAllReviews, setShowAllReviews] = useState(false);
+  const written = googleReviews.filter((r) => r.text.trim().length > 0);
+  const visibleReviews = showAllReviews ? written : written.slice(0, 6);
+
 
   return (
     <div className="min-h-screen bg-background text-foreground">
