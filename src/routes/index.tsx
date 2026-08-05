@@ -24,10 +24,7 @@ import {
   Syringe,
 } from "lucide-react";
 import doctor from "@/assets/doctor-treatment.jpg.asset.json";
-import smile from "@/assets/smile.jpg.asset.json";
 import heroClinic from "@/assets/hero-clinic.jpg.asset.json";
-import ortho from "@/assets/ortho.jpg.asset.json";
-import braces from "@/assets/braces.jpg.asset.json";
 import drRimshaCert from "@/assets/dr-rimsha-ortho-cert.jpg.asset.json";
 import logo from "@/assets/cure-logo.png.asset.json";
 import rctCase from "@/assets/rct-case.jpeg.asset.json";
@@ -286,6 +283,24 @@ function Home() {
           </div>
         </div>
       </section>
+
+      {/* Trust strip */}
+      <section className="border-y border-border bg-card/60">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 grid grid-cols-2 md:grid-cols-4 divide-x divide-border">
+          {[
+            { value: "5.0★", label: "Google Rating" },
+            { value: "23+", label: "Verified Reviews" },
+            { value: "10", label: "Dental Services" },
+            { value: "Certified", label: "Endo & Ortho" },
+          ].map((s) => (
+            <div key={s.label} className="py-6 px-3 text-center">
+              <div className="text-xl sm:text-2xl font-bold text-primary">{s.value}</div>
+              <div className="mt-1 text-xs sm:text-sm text-muted-foreground">{s.label}</div>
+            </div>
+          ))}
+        </div>
+      </section>
+
 
       {/* About */}
       <section id="about" className="py-20 bg-secondary/40">
@@ -673,10 +688,11 @@ function Home() {
           </div>
           <div className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-4">
             {[
-              { src: smile.url, span: "col-span-2 row-span-2", alt: "Smile transformation" },
-              { src: ortho.url, span: "", alt: "Orthodontic treatment" },
-              { src: braces.url, span: "", alt: "Braces information" },
-              { src: doctor.url, span: "", alt: "Dr. Rimsha Nehal" },
+              { src: smileCase.url, span: "col-span-2 row-span-2", alt: "Smile restoration before and after" },
+              { src: heroClinic.url, span: "", alt: "Modern dental treatment room" },
+              { src: cleaningCase.url, span: "", alt: "Scaling and polishing result" },
+              { src: doctor.url, span: "", alt: "Dr. Rimsha Nehal treating a patient" },
+
             ].map((img, i) => (
               <div
                 key={i}
