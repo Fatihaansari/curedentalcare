@@ -51,7 +51,41 @@ const services = [
   { icon: ShieldCheck, name: "Root Canal (Endodontics)", desc: "Painless root canal treatments performed with certified expertise." },
 ];
 
+const googleReviews = [
+  { name: "Khuzaima Zaki", when: "a day ago", stars: 5, text: "I am very happy with my bridge treatment at Cure Dental Center. The clinic is clean, staff is friendly and Dr. Rimsha explained everything very well. Great service and great result. Thank you 😊" },
+  { name: "Alisha Sami", when: "a week ago", stars: 5, text: "The experience is really good, the environment is perfect and friendly behavior ☺️" },
+  { name: "ayesha imran", when: "a week ago", stars: 5, text: "I had a fantastic experience here getting a root canal and a cap done. The clinic is clean, well-sanitized, and clearly prioritizes patient hygiene, which immediately put me at ease. The dentist was incredibly gentle and patient." },
+  { name: "Saman Ayub", when: "a week ago", stars: 5, text: "I had my scaling, root canal, and dental caps done by Dr. Rimsha. Everything was handled professionally, and the clinic was impressively clean. The instruments and equipment used during the treatment were also exceptionally clean — I am rating my experience five-star!" },
+  { name: "Sadquain Salahuddin", when: "a week ago", stars: 5, text: "My experience was excellent! I have done my root canal and crown from Dr. Rimsha — the entire process was pain-free. Sterilized instruments, hygiene and environment were all good!!" },
+  { name: "Nazia Tariq", when: "a week ago", stars: 5, text: "Very nice experience with affordable fees for my first time visit in Cure Dental Care clinic." },
+  { name: "Kainat Imroz", when: "a week ago", stars: 5, text: "Stress-free! They made sure I was completely comfortable throughout the whole procedure." },
+  { name: "Kainat Zakaria", when: "a week ago", stars: 5, text: "Highly recommended... Best services... Kind doctor gives proper advice and treats well... Had a great experience..." },
+  { name: "talha Khan", when: "a week ago", stars: 5, text: "Excellent root canal experience! I recently got my root canal treatment done at CURE Dental Care, and I couldn't be happier with the results. The team made the whole process smooth and painless." },
+  { name: "Ayesha Maqbool", when: "a week ago", stars: 5, text: "Had a great experience getting my scaling done! The procedure was super smooth, and the clinic environment was very clean and pleasant." },
+  { name: "shimza shykh", when: "a week ago", stars: 5, text: "I had an amazing experience at CURE Dental Care. The dentist took time to explain my treatment clearly before starting. The clinic is clean, modern, and they use proper sterilization. Pricing was transparent with no hidden charges. Highly recommend if you're looking for quality dental care." },
+  { name: "Muzna Aslam", when: "a week ago", stars: 5, text: "I am getting my braces treatment at Cure Dental Care with Dr. Rimsha, and I am very happy with my experience 🥳. Dr. Rimsha and her staff are very professional and supportive. The appointment scheduling has always been smooth." },
+  { name: "warood Ather", when: "a week ago", stars: 5, text: "Had a great experience there. A special thanks to the doctor for the excellent treatment, kindness, and patience. They explained every procedure clearly and made me feel comfortable." },
+  { name: "Ghori Khan", when: "a week ago", stars: 5, text: "⭐⭐⭐⭐⭐ I had a wonderful experience here. The service was excellent, the staff was very friendly and professional, and everything was handled with great care.", badge: "Local Guide" },
+  { name: "Affan Aziz", when: "a week ago", stars: 5, text: "Boht zabardast treatment h mashallah se." },
+  { name: "haris akbar", when: "a week ago", stars: 5, text: "👍" },
+  { name: "Mavia Al baloshi", when: "a year ago", stars: 5, text: "It will be very soon 👍" },
+  { name: "fatiha ansari", when: "a week ago", stars: 5, text: "" },
+  { name: "Tuba Sabir", when: "a week ago", stars: 5, text: "" },
+  { name: "Warda Jamshed", when: "a week ago", stars: 5, text: "" },
+  { name: "Rashida Rashid", when: "a week ago", stars: 5, text: "" },
+];
+
+const AVATAR_TONES = [
+  "bg-primary/15 text-primary",
+  "bg-accent/20 text-accent-foreground",
+  "bg-amber-500/15 text-amber-600",
+  "bg-emerald-500/15 text-emerald-600",
+  "bg-sky-500/15 text-sky-600",
+  "bg-rose-500/15 text-rose-600",
+];
+
 const patientCases = [
+
   {
     img: smileCase.url,
     title: "Smile Restoration",
