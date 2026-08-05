@@ -51,7 +51,41 @@ const services = [
   { icon: ShieldCheck, name: "Root Canal (Endodontics)", desc: "Painless root canal treatments performed with certified expertise." },
 ];
 
+const googleReviews = [
+  { name: "Khuzaima Zaki", when: "a day ago", stars: 5, text: "I am very happy with my bridge treatment at Cure Dental Center. The clinic is clean, staff is friendly and Dr. Rimsha explained everything very well. Great service and great result. Thank you 😊" },
+  { name: "Alisha Sami", when: "a week ago", stars: 5, text: "The experience is really good, the environment is perfect and friendly behavior ☺️" },
+  { name: "ayesha imran", when: "a week ago", stars: 5, text: "I had a fantastic experience here getting a root canal and a cap done. The clinic is clean, well-sanitized, and clearly prioritizes patient hygiene, which immediately put me at ease. The dentist was incredibly gentle and patient." },
+  { name: "Saman Ayub", when: "a week ago", stars: 5, text: "I had my scaling, root canal, and dental caps done by Dr. Rimsha. Everything was handled professionally, and the clinic was impressively clean. The instruments and equipment used during the treatment were also exceptionally clean — I am rating my experience five-star!" },
+  { name: "Sadquain Salahuddin", when: "a week ago", stars: 5, text: "My experience was excellent! I have done my root canal and crown from Dr. Rimsha — the entire process was pain-free. Sterilized instruments, hygiene and environment were all good!!" },
+  { name: "Nazia Tariq", when: "a week ago", stars: 5, text: "Very nice experience with affordable fees for my first time visit in Cure Dental Care clinic." },
+  { name: "Kainat Imroz", when: "a week ago", stars: 5, text: "Stress-free! They made sure I was completely comfortable throughout the whole procedure." },
+  { name: "Kainat Zakaria", when: "a week ago", stars: 5, text: "Highly recommended... Best services... Kind doctor gives proper advice and treats well... Had a great experience..." },
+  { name: "talha Khan", when: "a week ago", stars: 5, text: "Excellent root canal experience! I recently got my root canal treatment done at CURE Dental Care, and I couldn't be happier with the results. The team made the whole process smooth and painless." },
+  { name: "Ayesha Maqbool", when: "a week ago", stars: 5, text: "Had a great experience getting my scaling done! The procedure was super smooth, and the clinic environment was very clean and pleasant." },
+  { name: "shimza shykh", when: "a week ago", stars: 5, text: "I had an amazing experience at CURE Dental Care. The dentist took time to explain my treatment clearly before starting. The clinic is clean, modern, and they use proper sterilization. Pricing was transparent with no hidden charges. Highly recommend if you're looking for quality dental care." },
+  { name: "Muzna Aslam", when: "a week ago", stars: 5, text: "I am getting my braces treatment at Cure Dental Care with Dr. Rimsha, and I am very happy with my experience 🥳. Dr. Rimsha and her staff are very professional and supportive. The appointment scheduling has always been smooth." },
+  { name: "warood Ather", when: "a week ago", stars: 5, text: "Had a great experience there. A special thanks to the doctor for the excellent treatment, kindness, and patience. They explained every procedure clearly and made me feel comfortable." },
+  { name: "Ghori Khan", when: "a week ago", stars: 5, text: "⭐⭐⭐⭐⭐ I had a wonderful experience here. The service was excellent, the staff was very friendly and professional, and everything was handled with great care.", badge: "Local Guide" },
+  { name: "Affan Aziz", when: "a week ago", stars: 5, text: "Boht zabardast treatment h mashallah se." },
+  { name: "haris akbar", when: "a week ago", stars: 5, text: "👍" },
+  { name: "Mavia Al baloshi", when: "a year ago", stars: 5, text: "It will be very soon 👍" },
+  { name: "fatiha ansari", when: "a week ago", stars: 5, text: "" },
+  { name: "Tuba Sabir", when: "a week ago", stars: 5, text: "" },
+  { name: "Warda Jamshed", when: "a week ago", stars: 5, text: "" },
+  { name: "Rashida Rashid", when: "a week ago", stars: 5, text: "" },
+];
+
+const AVATAR_TONES = [
+  "bg-primary/15 text-primary",
+  "bg-accent/20 text-accent-foreground",
+  "bg-amber-500/15 text-amber-600",
+  "bg-emerald-500/15 text-emerald-600",
+  "bg-sky-500/15 text-sky-600",
+  "bg-rose-500/15 text-rose-600",
+];
+
 const patientCases = [
+
   {
     img: smileCase.url,
     title: "Smile Restoration",
@@ -141,6 +175,10 @@ export const Route = createFileRoute("/")({
 
 function Home() {
   const [open, setOpen] = useState(false);
+  const [showAllReviews, setShowAllReviews] = useState(false);
+  const written = googleReviews.filter((r) => r.text.trim().length > 0);
+  const visibleReviews = showAllReviews ? written : written.slice(0, 6);
+
 
   return (
     <div className="min-h-screen bg-background text-foreground">
@@ -531,6 +569,92 @@ function Home() {
           </div>
         </div>
       </section>
+
+      {/* Google Reviews */}
+      <section id="google-reviews" className="py-20">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-2xl mx-auto">
+            <div className="text-sm font-semibold text-primary uppercase tracking-wider mb-3">
+              What Our Patients Say
+            </div>
+            <h2 className="text-3xl sm:text-4xl font-bold">Rated 5.0 on Google</h2>
+            <div className="mt-6 inline-flex flex-wrap items-center justify-center gap-x-4 gap-y-2 rounded-2xl border border-border bg-card px-6 py-4 shadow-sm">
+              <span className="text-4xl font-extrabold leading-none">5.0</span>
+              <div className="flex flex-col items-start">
+                <div className="flex items-center gap-0.5">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="w-5 h-5 fill-amber-400 text-amber-400" />
+                  ))}
+                </div>
+                <span className="text-sm text-muted-foreground">
+                  Based on {googleReviews.length} Google reviews
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {visibleReviews.map((r, i) => (
+              <article
+                key={r.name + i}
+                className="flex flex-col rounded-3xl border border-border bg-card p-6 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all"
+              >
+                <header className="grid grid-cols-[auto_minmax(0,1fr)] items-center gap-3">
+                  <div
+                    className={`grid h-11 w-11 shrink-0 place-items-center rounded-full font-bold ${
+                      AVATAR_TONES[i % AVATAR_TONES.length]
+                    }`}
+                    aria-hidden="true"
+                  >
+                    {r.name.trim().charAt(0).toUpperCase()}
+                  </div>
+                  <div className="min-w-0">
+                    <div className="truncate font-semibold">{r.name}</div>
+                    <div className="flex flex-wrap items-center gap-2 text-xs text-muted-foreground">
+                      <span>{r.when}</span>
+                      {r.badge && (
+                        <span className="rounded-full bg-primary/10 px-2 py-0.5 font-medium text-primary">
+                          {r.badge}
+                        </span>
+                      )}
+                    </div>
+                  </div>
+                </header>
+                <div className="mt-4 flex items-center gap-0.5">
+                  {[...Array(r.stars)].map((_, s) => (
+                    <Star key={s} className="w-4 h-4 fill-amber-400 text-amber-400" />
+                  ))}
+                </div>
+                <div className="relative mt-3 flex-1">
+                  <Quote className="absolute -top-1 -left-1 w-6 h-6 text-primary/15" />
+                  <p className="pl-6 text-sm leading-relaxed text-muted-foreground">{r.text}</p>
+                </div>
+              </article>
+            ))}
+          </div>
+
+          <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
+            {written.length > 6 && (
+              <button
+                type="button"
+                onClick={() => setShowAllReviews((v) => !v)}
+                className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-background px-6 py-3 font-semibold text-primary transition-all hover:bg-primary/5"
+              >
+                {showAllReviews ? "Show fewer reviews" : `Read all ${written.length} reviews`}
+              </button>
+            )}
+            <a
+              href={MAP_LINK}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 font-semibold text-primary-foreground shadow-lg transition-all hover:-translate-y-0.5 hover:shadow-xl"
+            >
+              <Star className="w-5 h-5" /> Review us on Google
+            </a>
+          </div>
+        </div>
+      </section>
+
 
       {/* Gallery */}
       <section id="gallery" className="py-20">
