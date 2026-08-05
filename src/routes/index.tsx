@@ -19,6 +19,9 @@ import {
   Quote,
   Award,
   BadgeCheck,
+  Layers,
+  Crown,
+  Syringe,
 } from "lucide-react";
 import doctor from "@/assets/doctor-treatment.jpg.asset.json";
 import smile from "@/assets/smile.jpg.asset.json";
