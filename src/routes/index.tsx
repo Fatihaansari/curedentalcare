@@ -284,6 +284,24 @@ function Home() {
         </div>
       </section>
 
+      {/* Trust strip */}
+      <section className="border-y border-border bg-card/60">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 grid grid-cols-2 md:grid-cols-4 divide-x divide-border">
+          {[
+            { value: "5.0★", label: "Google Rating" },
+            { value: "23+", label: "Verified Reviews" },
+            { value: "10", label: "Dental Services" },
+            { value: "Certified", label: "Endo & Ortho" },
+          ].map((s) => (
+            <div key={s.label} className="py-6 px-3 text-center">
+              <div className="text-xl sm:text-2xl font-bold text-primary">{s.value}</div>
+              <div className="mt-1 text-xs sm:text-sm text-muted-foreground">{s.label}</div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+
       {/* About */}
       <section id="about" className="py-20 bg-secondary/40">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-12 items-center">
