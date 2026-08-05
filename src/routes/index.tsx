@@ -19,9 +19,13 @@ import {
   Quote,
   Award,
   BadgeCheck,
+  Layers,
+  Crown,
+  Syringe,
 } from "lucide-react";
 import doctor from "@/assets/doctor-treatment.jpg.asset.json";
 import smile from "@/assets/smile.jpg.asset.json";
+import heroClinic from "@/assets/hero-clinic.jpg.asset.json";
 import ortho from "@/assets/ortho.jpg.asset.json";
 import braces from "@/assets/braces.jpg.asset.json";
 import drRimshaCert from "@/assets/dr-rimsha-ortho-cert.jpg.asset.json";
@@ -43,12 +47,16 @@ const MAP_EMBED =
 const MAP_LINK = "https://www.google.com/maps?q=24.9505934,66.9822971";
 
 const services = [
-  { icon: Sparkles, name: "Cosmetic Whitening", desc: "Professional teeth whitening for a brighter, confident smile." },
-  { icon: Braces, name: "Braces & Aligners", desc: "Traditional and modern orthodontic solutions with monthly installment plans." },
-  { icon: Smile, name: "Deep Cleaning", desc: "Scaling & polishing to keep your gums healthy and teeth spotless." },
-  { icon: Wrench, name: "Permanent Implants", desc: "Long-lasting tooth replacement crafted for natural comfort." },
-  { icon: Stethoscope, name: "Orthodontic Treatment", desc: "Correct crooked, gapped, or crowded teeth — 20% OFF available." },
-  { icon: ShieldCheck, name: "Root Canal (Endodontics)", desc: "Painless root canal treatments performed with certified expertise." },
+  { icon: Sparkles, name: "Teeth Whitening", desc: "Professional in-clinic whitening for a brighter, confident smile." },
+  { icon: Smile, name: "Scaling & Polishing", desc: "Deep cleaning that removes plaque and stains for healthy gums." },
+  { icon: Wrench, name: "Dental Implants", desc: "Permanent, natural-looking tooth replacement built to last." },
+  { icon: Layers, name: "Bridges", desc: "Fixed bridges that close gaps and restore your natural bite." },
+  { icon: Crown, name: "Crowns / Caps", desc: "Strong, aesthetic crowns that protect and rebuild damaged teeth." },
+  { icon: ShieldCheck, name: "Root Canal (RCT)", desc: "Painless root canal treatment performed with certified endo expertise." },
+  { icon: Stethoscope, name: "Partial & Complete Dentures", desc: "Comfortable, custom-fitted dentures for full chewing confidence." },
+  { icon: Braces, name: "Braces", desc: "Orthodontic braces by a certified orthodontist — installment plans available." },
+  { icon: Smile, name: "Clear Aligners", desc: "Discreet, removable aligners that straighten teeth invisibly." },
+  { icon: Syringe, name: "Extraction", desc: "Safe, gentle tooth extractions including difficult wisdom teeth." },
 ];
 
 const googleReviews = [
@@ -166,7 +174,7 @@ export const Route = createFileRoute("/")({
         content: "Trusted dental clinic in Orangi Town, Karachi. Braces, whitening, implants, root canal and orthodontics by Dr. Rimsha Nehal (BDS, KMDC).",
       },
       { property: "og:type", content: "website" },
-      { property: "og:image", content: smile.url.startsWith("http") ? smile.url : `https://cure-dental.lovable.app${smile.url}` },
+      { property: "og:image", content: `https://curedentalcare.lovable.app${heroClinic.url}` },
       { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
@@ -270,8 +278,8 @@ function Home() {
           <div className="relative">
             <div className="absolute -inset-4 bg-gradient-to-tr from-primary/20 to-accent/20 rounded-3xl blur-2xl" />
             <img
-              src={smile.url}
-              alt="Cure Dental Care - Smile with confidence"
+              src={heroClinic.url}
+              alt="Modern dental treatment room at Cure Dental Care"
               loading="eager"
               className="relative rounded-3xl shadow-2xl w-full object-cover aspect-[4/5] ring-1 ring-border"
             />
