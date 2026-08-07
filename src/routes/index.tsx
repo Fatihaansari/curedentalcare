@@ -23,14 +23,14 @@ import {
   Crown,
   Syringe,
 } from "lucide-react";
-import doctor from "@/assets/doctor-treatment.jpg.asset.json";
-import heroClinic from "@/assets/hero-clinic.jpg.asset.json";
-import drRimshaCert from "@/assets/dr-rimsha-ortho-cert.jpg.asset.json";
-import logo from "@/assets/cure-logo.png.asset.json";
-import rctCase from "@/assets/rct-case.jpeg.asset.json";
-import smileCase from "@/assets/smile-case.jpeg.asset.json";
-import cleaningCase from "@/assets/cleaning-case.jpeg.asset.json";
-import orthoTransformation from "@/assets/ortho-transformation.jpeg.asset.json";
+const doctor = { url: "/images/doctor-treatment.jpg" };
+const heroClinic = { url: "/images/hero-clinic.jpg" };
+const drRimshaCert = { url: "/images/dr-rimsha-ortho-cert.jpg" };
+const logo = { url: "/images/cure-logo.png" };
+const rctCase = { url: "/images/rct-case.jpeg" };
+const smileCase = { url: "/images/smile-case.jpeg" };
+const cleaningCase = { url: "/images/cleaning-case.jpeg" };
+const orthoTransformation = { url: "/images/ortho-transformation.jpeg" };
 
 const PHONE = "+923418711752";
 const PHONE_DISPLAY = "+92 341 8711752";
