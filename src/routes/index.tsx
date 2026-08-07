@@ -229,14 +229,16 @@ function Home() {
 
       {/* Hero */}
       <section id="home" className="relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-accent/5 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/15 via-accent/10 to-background" />
+        <div className="absolute -top-32 -right-24 w-[36rem] h-[36rem] rounded-full bg-gradient-to-br from-accent/30 to-primary/10 blur-3xl opacity-60" />
+        <div className="absolute -bottom-40 -left-24 w-[30rem] h-[30rem] rounded-full bg-gradient-to-tr from-primary/20 to-transparent blur-3xl opacity-60" />
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 lg:py-24 grid lg:grid-cols-2 gap-12 items-center">
           <div>
-            <div className="inline-flex items-center gap-2 rounded-full bg-primary/10 text-primary px-4 py-1.5 text-xs font-semibold mb-6">
+            <div className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-primary/15 to-accent/25 text-primary px-4 py-1.5 text-xs font-semibold mb-6 ring-1 ring-primary/10">
               <Sparkles className="w-3.5 h-3.5" /> Trusted Dental Care in Karachi
             </div>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.05]">
-              Smile with <span className="text-primary">confidence.</span>
+              Smile with <span className="bg-gradient-to-r from-primary via-primary to-accent bg-clip-text text-transparent">confidence.</span>
             </h1>
             <p className="mt-6 text-lg text-muted-foreground max-w-xl">
               Cure Dental Care & Medical Centre offers modern, gentle dentistry — from braces and whitening to implants and root canals — led by Dr. Rimsha Nehal.
@@ -244,7 +246,7 @@ function Home() {
             <div className="mt-8 flex flex-wrap gap-3">
               <a
                 href={`tel:${PHONE}`}
-                className="inline-flex items-center gap-2 rounded-full bg-primary text-primary-foreground px-6 py-3 font-semibold shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all"
+                className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-primary to-accent text-primary-foreground px-6 py-3 font-semibold shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all"
               >
                 <Phone className="w-5 h-5" /> Call {PHONE_DISPLAY}
               </a>
@@ -316,7 +318,7 @@ function Home() {
           </div>
           <div className="order-1 lg:order-2">
             <div className="text-sm font-semibold text-primary uppercase tracking-wider mb-3">Meet Your Dentist</div>
-            <h2 className="text-3xl sm:text-4xl font-bold">Dr. Rimsha Nehal</h2>
+            <h2 className="text-3xl sm:text-4xl font-bold bg-gradient-to-r from-foreground via-primary to-accent bg-clip-text text-transparent">Dr. Rimsha Nehal</h2>
             <div className="mt-2 flex items-center gap-2 text-muted-foreground">
               <GraduationCap className="w-4 h-4" />
               <span className="text-sm">BDS (KMDC) · C. Endo · C. Ortho · RDS</span>
@@ -350,7 +352,7 @@ function Home() {
             <div className="inline-flex items-center gap-2 text-sm font-semibold text-primary uppercase tracking-wider mb-3">
               <Award className="w-4 h-4" /> Certifications & Recognitions
             </div>
-            <h2 className="text-3xl sm:text-4xl font-bold">Our Doctor's Achievements</h2>
+            <h2 className="text-3xl sm:text-4xl font-bold bg-gradient-to-r from-foreground via-primary to-accent bg-clip-text text-transparent">Our Doctor's Achievements</h2>
             <p className="mt-4 text-muted-foreground">
               Continued learning and certified expertise — because your smile deserves the best.
             </p>
@@ -401,7 +403,7 @@ function Home() {
             <div className="inline-flex items-center gap-2 text-sm font-semibold text-primary uppercase tracking-wider mb-3">
               <Sparkles className="w-4 h-4" /> Before &amp; After
             </div>
-            <h2 className="text-3xl sm:text-4xl font-bold">Real Smiles, Real Results</h2>
+            <h2 className="text-3xl sm:text-4xl font-bold bg-gradient-to-r from-foreground via-primary to-accent bg-clip-text text-transparent">Real Smiles, Real Results</h2>
             <p className="mt-4 text-muted-foreground">
               Life-changing orthodontic transformations by Dr. Rimsha Nehal — from crooked to confident.
             </p>
@@ -502,7 +504,7 @@ function Home() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto">
             <div className="text-sm font-semibold text-primary uppercase tracking-wider mb-3">Our Services</div>
-            <h2 className="text-3xl sm:text-4xl font-bold">Complete dental care under one roof</h2>
+            <h2 className="text-3xl sm:text-4xl font-bold bg-gradient-to-r from-foreground via-primary to-accent bg-clip-text text-transparent">Complete dental care under one roof</h2>
             <p className="mt-4 text-muted-foreground">
               Modern treatments, professional standards, and gentle care for the whole family.
             </p>
@@ -542,7 +544,7 @@ function Home() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto">
             <div className="text-sm font-semibold text-primary uppercase tracking-wider mb-3">Patient Results & Reviews</div>
-            <h2 className="text-3xl sm:text-4xl font-bold">Real cases. Real smiles.</h2>
+            <h2 className="text-3xl sm:text-4xl font-bold bg-gradient-to-r from-foreground via-primary to-accent bg-clip-text text-transparent">Real cases. Real smiles.</h2>
             <p className="mt-4 text-muted-foreground">
               A closer look at our clinical work and what our patients say after treatment.
             </p>
@@ -600,7 +602,7 @@ function Home() {
             <div className="text-sm font-semibold text-primary uppercase tracking-wider mb-3">
               What Our Patients Say
             </div>
-            <h2 className="text-3xl sm:text-4xl font-bold">Rated 5.0 on Google</h2>
+            <h2 className="text-3xl sm:text-4xl font-bold bg-gradient-to-r from-foreground via-primary to-accent bg-clip-text text-transparent">Rated 5.0 on Google</h2>
             <div className="mt-6 inline-flex flex-wrap items-center justify-center gap-x-4 gap-y-2 rounded-2xl border border-border bg-card px-6 py-4 shadow-sm">
               <span className="text-4xl font-extrabold leading-none">5.0</span>
               <div className="flex flex-col items-start">
@@ -715,7 +717,7 @@ function Home() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto">
             <div className="text-sm font-semibold text-primary uppercase tracking-wider mb-3">Visit Us</div>
-            <h2 className="text-3xl sm:text-4xl font-bold">Get in touch & find us</h2>
+            <h2 className="text-3xl sm:text-4xl font-bold bg-gradient-to-r from-foreground via-primary to-accent bg-clip-text text-transparent">Get in touch & find us</h2>
           </div>
           <div className="mt-12 grid lg:grid-cols-2 gap-8">
             <div className="space-y-4">
