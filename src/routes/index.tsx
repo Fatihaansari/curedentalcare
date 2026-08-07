@@ -229,14 +229,16 @@ function Home() {
 
       {/* Hero */}
       <section id="home" className="relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-accent/5 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/15 via-accent/10 to-background" />
+        <div className="absolute -top-32 -right-24 w-[36rem] h-[36rem] rounded-full bg-gradient-to-br from-accent/30 to-primary/10 blur-3xl opacity-60" />
+        <div className="absolute -bottom-40 -left-24 w-[30rem] h-[30rem] rounded-full bg-gradient-to-tr from-primary/20 to-transparent blur-3xl opacity-60" />
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 lg:py-24 grid lg:grid-cols-2 gap-12 items-center">
           <div>
-            <div className="inline-flex items-center gap-2 rounded-full bg-primary/10 text-primary px-4 py-1.5 text-xs font-semibold mb-6">
+            <div className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-primary/15 to-accent/25 text-primary px-4 py-1.5 text-xs font-semibold mb-6 ring-1 ring-primary/10">
               <Sparkles className="w-3.5 h-3.5" /> Trusted Dental Care in Karachi
             </div>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.05]">
-              Smile with <span className="text-primary">confidence.</span>
+              Smile with <span className="bg-gradient-to-r from-primary via-primary to-accent bg-clip-text text-transparent">confidence.</span>
             </h1>
             <p className="mt-6 text-lg text-muted-foreground max-w-xl">
               Cure Dental Care & Medical Centre offers modern, gentle dentistry — from braces and whitening to implants and root canals — led by Dr. Rimsha Nehal.
@@ -244,7 +246,7 @@ function Home() {
             <div className="mt-8 flex flex-wrap gap-3">
               <a
                 href={`tel:${PHONE}`}
-                className="inline-flex items-center gap-2 rounded-full bg-primary text-primary-foreground px-6 py-3 font-semibold shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all"
+                className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-primary to-accent text-primary-foreground px-6 py-3 font-semibold shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all"
               >
                 <Phone className="w-5 h-5" /> Call {PHONE_DISPLAY}
               </a>
