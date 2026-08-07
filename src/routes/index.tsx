@@ -680,16 +680,16 @@ function Home() {
 
 
       {/* Gallery */}
-      <section id="gallery" className="py-20">
+      <section id="gallery" className="py-20 bg-gradient-to-b from-background via-secondary/30 to-background">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto">
             <div className="text-sm font-semibold text-primary uppercase tracking-wider mb-3">Gallery</div>
-            <h2 className="text-3xl sm:text-4xl font-bold">A closer look at our care</h2>
+            <h2 className="text-3xl sm:text-4xl font-bold bg-gradient-to-r from-foreground via-primary to-accent bg-clip-text text-transparent">A closer look at our care</h2>
           </div>
           <div className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-4">
             {[
               { src: smileCase.url, span: "col-span-2 row-span-2", alt: "Smile restoration before and after" },
-              { src: heroClinic.url, span: "", alt: "Modern dental treatment room" },
+              { src: rctCase.url, span: "", alt: "Root canal treatment case" },
               { src: cleaningCase.url, span: "", alt: "Scaling and polishing result" },
               { src: doctor.url, span: "", alt: "Dr. Rimsha Nehal treating a patient" },
 
