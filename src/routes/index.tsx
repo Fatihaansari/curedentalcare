@@ -318,7 +318,7 @@ function Home() {
           </div>
           <div className="order-1 lg:order-2">
             <div className="text-sm font-semibold text-primary uppercase tracking-wider mb-3">Meet Your Dentist</div>
-            <h2 className="text-3xl sm:text-4xl font-bold">Dr. Rimsha Nehal</h2>
+            <h2 className="text-3xl sm:text-4xl font-bold bg-gradient-to-r from-foreground via-primary to-accent bg-clip-text text-transparent">Dr. Rimsha Nehal</h2>
             <div className="mt-2 flex items-center gap-2 text-muted-foreground">
               <GraduationCap className="w-4 h-4" />
               <span className="text-sm">BDS (KMDC) · C. Endo · C. Ortho · RDS</span>
@@ -352,7 +352,7 @@ function Home() {
             <div className="inline-flex items-center gap-2 text-sm font-semibold text-primary uppercase tracking-wider mb-3">
               <Award className="w-4 h-4" /> Certifications & Recognitions
             </div>
-            <h2 className="text-3xl sm:text-4xl font-bold">Our Doctor's Achievements</h2>
+            <h2 className="text-3xl sm:text-4xl font-bold bg-gradient-to-r from-foreground via-primary to-accent bg-clip-text text-transparent">Our Doctor's Achievements</h2>
             <p className="mt-4 text-muted-foreground">
               Continued learning and certified expertise — because your smile deserves the best.
             </p>
@@ -403,7 +403,7 @@ function Home() {
             <div className="inline-flex items-center gap-2 text-sm font-semibold text-primary uppercase tracking-wider mb-3">
               <Sparkles className="w-4 h-4" /> Before &amp; After
             </div>
-            <h2 className="text-3xl sm:text-4xl font-bold">Real Smiles, Real Results</h2>
+            <h2 className="text-3xl sm:text-4xl font-bold bg-gradient-to-r from-foreground via-primary to-accent bg-clip-text text-transparent">Real Smiles, Real Results</h2>
             <p className="mt-4 text-muted-foreground">
               Life-changing orthodontic transformations by Dr. Rimsha Nehal — from crooked to confident.
             </p>
@@ -504,7 +504,7 @@ function Home() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto">
             <div className="text-sm font-semibold text-primary uppercase tracking-wider mb-3">Our Services</div>
-            <h2 className="text-3xl sm:text-4xl font-bold">Complete dental care under one roof</h2>
+            <h2 className="text-3xl sm:text-4xl font-bold bg-gradient-to-r from-foreground via-primary to-accent bg-clip-text text-transparent">Complete dental care under one roof</h2>
             <p className="mt-4 text-muted-foreground">
               Modern treatments, professional standards, and gentle care for the whole family.
             </p>
@@ -544,7 +544,7 @@ function Home() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto">
             <div className="text-sm font-semibold text-primary uppercase tracking-wider mb-3">Patient Results & Reviews</div>
-            <h2 className="text-3xl sm:text-4xl font-bold">Real cases. Real smiles.</h2>
+            <h2 className="text-3xl sm:text-4xl font-bold bg-gradient-to-r from-foreground via-primary to-accent bg-clip-text text-transparent">Real cases. Real smiles.</h2>
             <p className="mt-4 text-muted-foreground">
               A closer look at our clinical work and what our patients say after treatment.
             </p>
@@ -602,7 +602,7 @@ function Home() {
             <div className="text-sm font-semibold text-primary uppercase tracking-wider mb-3">
               What Our Patients Say
             </div>
-            <h2 className="text-3xl sm:text-4xl font-bold">Rated 5.0 on Google</h2>
+            <h2 className="text-3xl sm:text-4xl font-bold bg-gradient-to-r from-foreground via-primary to-accent bg-clip-text text-transparent">Rated 5.0 on Google</h2>
             <div className="mt-6 inline-flex flex-wrap items-center justify-center gap-x-4 gap-y-2 rounded-2xl border border-border bg-card px-6 py-4 shadow-sm">
               <span className="text-4xl font-extrabold leading-none">5.0</span>
               <div className="flex flex-col items-start">
@@ -717,7 +717,7 @@ function Home() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto">
             <div className="text-sm font-semibold text-primary uppercase tracking-wider mb-3">Visit Us</div>
-            <h2 className="text-3xl sm:text-4xl font-bold">Get in touch & find us</h2>
+            <h2 className="text-3xl sm:text-4xl font-bold bg-gradient-to-r from-foreground via-primary to-accent bg-clip-text text-transparent">Get in touch & find us</h2>
           </div>
           <div className="mt-12 grid lg:grid-cols-2 gap-8">
             <div className="space-y-4">
