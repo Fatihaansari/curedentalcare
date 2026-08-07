@@ -285,7 +285,7 @@ function Home() {
       </section>
 
       {/* Trust strip */}
-      <section className="border-y border-border bg-card/60">
+      <section className="border-y border-border bg-gradient-to-r from-primary/10 via-card/70 to-accent/15">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 grid grid-cols-2 md:grid-cols-4 divide-x divide-border">
           {[
             { value: "5.0★", label: "Google Rating" },
@@ -303,7 +303,7 @@ function Home() {
 
 
       {/* About */}
-      <section id="about" className="py-20 bg-secondary/40">
+      <section id="about" className="py-20 bg-gradient-to-br from-secondary/60 via-background to-accent/10">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-12 items-center">
           <div className="relative order-2 lg:order-1">
             <div className="absolute -inset-4 bg-primary/10 rounded-3xl blur-2xl" />
@@ -344,7 +344,7 @@ function Home() {
       </section>
 
       {/* Achievements & Certifications */}
-      <section id="achievements" className="py-20">
+      <section id="achievements" className="py-20 bg-gradient-to-b from-background via-primary/5 to-background">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto">
             <div className="inline-flex items-center gap-2 text-sm font-semibold text-primary uppercase tracking-wider mb-3">
@@ -498,7 +498,7 @@ function Home() {
 
       {/* Services */}
 
-      <section id="services" className="py-20">
+      <section id="services" className="py-20 bg-gradient-to-b from-background via-accent/8 to-background">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto">
             <div className="text-sm font-semibold text-primary uppercase tracking-wider mb-3">Our Services</div>
@@ -538,7 +538,7 @@ function Home() {
       </section>
 
       {/* Patient Reviews / Cases */}
-      <section id="reviews" className="py-20 bg-secondary/40">
+      <section id="reviews" className="py-20 bg-gradient-to-br from-accent/10 via-secondary/50 to-background">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto">
             <div className="text-sm font-semibold text-primary uppercase tracking-wider mb-3">Patient Results & Reviews</div>
@@ -594,7 +594,7 @@ function Home() {
       </section>
 
       {/* Google Reviews */}
-      <section id="google-reviews" className="py-20">
+      <section id="google-reviews" className="py-20 bg-gradient-to-b from-background via-secondary/25 to-background">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto">
             <div className="text-sm font-semibold text-primary uppercase tracking-wider mb-3">
@@ -711,7 +711,7 @@ function Home() {
       </section>
 
       {/* Contact + Map */}
-      <section id="contact" className="py-20 bg-secondary/40">
+      <section id="contact" className="py-20 bg-gradient-to-br from-secondary/60 via-background to-primary/10">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto">
             <div className="text-sm font-semibold text-primary uppercase tracking-wider mb-3">Visit Us</div>
@@ -778,7 +778,7 @@ function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-primary text-primary-foreground">
+      <footer className="bg-gradient-to-br from-primary via-primary to-foreground text-primary-foreground">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 grid md:grid-cols-3 gap-8">
           <div>
             <div className="flex items-center gap-2">
